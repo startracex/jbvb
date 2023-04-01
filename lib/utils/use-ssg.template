@@ -1,0 +1,28 @@
+import Cata from "@/lib/layout/cata";
+import { getUrls, getContent } from "@/lib/utils/ssg";
+import { marked } from 'marked';
+export default (props: any) => {
+  return <>
+    <Cata>
+      <div dangerouslySetInnerHTML={{ __html: marked(props.data) }}></div>
+    </Cata>
+  </>;
+};
+
+export function getStaticPaths() {
+  const sa = getUrls("zh");
+  return {
+    paths: [
+      ...sa
+    ],
+    fallback: false,
+  };
+}
+export function getStaticProps(paths: { params: { args: any[]; }; }) {
+  const l = "/zh/" + paths.params.args.join("/");
+  return {
+    props: {
+      data: getContent(l),
+    },
+  };
+}

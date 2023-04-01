@@ -1,0 +1,89 @@
+import Cata from "@/lib/layout/cata"
+
+import Callout from "@/lib/layout/callout"
+
+
+<Cata >
+
+<Callout>Перевод еще не полностью готов</Callout>
+
+
+# Краткое введение
+
+Godown - это набор компонентов на основе LIT, каждый из которых является стандартным веб-компонентом, как и каждый компонент GoDown
+
+## Установка и использование
+
+```bash
+npm i godown
+```
+
+### Введен в HTML через CDN
+
+Приведя файл в `script` и используя атрибут `type='module`, эта ссылка также импортируется в lit
+
+```html
+<script type="module" src="https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js"></script>
+```
+
+Пример с буквой base-button
+  
+```html 
+<body>
+  <script type="module" src="https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js"></script>
+  <base-button>Click me</base-button>
+</body>
+```
+
+### Введено через JS
+
+```js
+import "https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js"
+```
+
+Пример с буквой base-button
+
+
+```js
+import { BaseButton } from "https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js";
+
+const button = new BaseButton();
+button.innerText = "BaseButton";
+document.body.appendChild(button);
+```
+
+```js
+import "https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js";
+
+const button = document.createElement("base-button");
+button.textContent = "BaseButton";
+document.body.appendChild(button);
+```
+
+## Настройка
+
+Измените имя элемента, введя name
+
+```html
+<script type="module">
+    import { name } from "https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js"
+
+    name.prefix = "custom-";
+    name.suffix = "-element";
+</script>
+```
+
+Это сделает недействительными компоненты, которые имеют свои собственные другие компоненты, которые могут быть отключены атрибутом `set=0`
+
+Стили по умолчанию предоставляются пользовательскими стилями, и для их изменения большинство компонентов могут переопределить стили по умолчанию, изменив свои собственные стили или установив переменные CSS с тем же именем.
+
+Ну вот
+
+```css
+nav-layout{
+  color: #000;
+  --nav-background: #fff;
+}
+```
+
+</Cata>

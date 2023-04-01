@@ -1,0 +1,96 @@
+# Items
+
+## base-button
+
+base-button ss a normal button
+
+|propties|type|default|desc|
+|---|---|---|---|
+|disabled|boolean|false|Disable button|
+|ghost|boolean|false|Ghost button|
+|color|string|""|Hue|
+
+Use slot elements with names of `pre` and `suf` to specify the front and back elements
+
+If multiple buttons are used, use [`button-group`](./group#button-group)
+
+## base-switch
+
+base-swtch is a normal switch (checkbox input)
+
+|propties|type|default|desc|
+|---|---|---|---|
+|disabled|boolean|false|Disable input|
+|checked|boolean|false|Input checked (Overwrite def)|
+|fat|boolean|false|Use fat style (default as rect)|
+|def|string|"false"|Checked by default (Will attempt to parse the string)|
+|name|string|"checkbox"|Input name|
+|value|string|"on"|Input value|
+
+Use slot elements with names of `true` , `false` ,`always` to set display items for different selections
+
+## dialog-item
+
+Dialog-item is an extension of dialog
+
+|propties|type|default|desc|
+|---|---|---|---|
+|Key | string | "" | Allow Esc key control to close|
+|Scale | boolean | false | Allow scaling|
+|Model | boolean | false | Whether the default is mode|
+|Call | string | "center" | Popup location|
+
+Display by 'show()' by default, 'showModel()' by mode, and hide by 'close()'
+
+## details-item
+
+Details-item is an extension of details
+
+|propties|type|default|desc|
+|---|---|---|---|
+|open | boolean | false |Open by default|
+
+Change the open status through `toggle ()`, and `isopen()` will return the current open value
+
+If multiple details are used, use [`details group`] (./group # details group)
+
+## alert-item
+
+|propties|type|default|desc|
+|---|---|---|---|
+|autocolose | Number | 0 | Auto close time (ms)|
+|call | string | "info" | style|
+
+You can use `info`, `danger`, `success`, `warning` to set the style, set non-zero `autococlose` or use `close()` to remove
+
+## avatar-anchor
+
+avatar-anchor is a component for creating user instances
+
+|propties|type|default|desc|
+|---|---|---|---|
+|name|string|""|User name displayed when there is no image|
+|src|string|""|Image source|
+|href|string|""|Jump link|
+|gap|boolean|false|Put the slot element at the bottom|
+|more|number|0|Hidden quantity|
+|call|string|"center"|Alignment|
+
+Use the slot element with name `state` to set the status point
+
+Use the slot element with name `bar` to set status bar
+
+If multiple avatar-anchors are used, use[`avatar-group`](./group#avatar-group)
+
+## super-a
+
+super-a 是a的拓展
+
+|propties|type|default|desc|
+|---|---|---|---|
+|href|string|""|Jump link|
+|target|string|""|Jump target|
+|active|string|""|The class name added when pointing to the link to this page|
+|arrow|string|""|Show attached icons|
+
+Use slot elements with names of `pre` and `suf` to specify the front and back elements

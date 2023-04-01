@@ -1,0 +1,82 @@
+import Cata from "@/lib/layout/cata"
+
+<Cata>
+
+# 介绍
+
+Godown是基于Lit的一组组件,每一个Lit组件都是标准的web组件,每一个godown组件也是一样
+
+## 安装&使用
+
+```bash
+npm i godown
+```
+
+### 在html中使用cdn引入
+
+将文件引入到`script`中,并且使用`type="module"`属性,此链接也会导入lit
+
+```html
+<script type="module" src="https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js"></script>
+```
+
+示例,显示一个 base-button
+  
+```html 
+<body>
+  <script type="module" src="https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js"></script>
+  <base-button>Click me</base-button>
+</body>
+```
+
+### 在js中使用
+
+```js
+import "https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js"
+```
+
+示例,显示一个base-button
+
+```js
+import { BaseButton } from "https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js";
+
+const button = new BaseButton();
+button.innerText = "BaseButton";
+document.body.appendChild(button);
+```
+
+```js
+import "https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js";
+
+const button = document.createElement("base-button");
+button.textContent = "BaseButton";
+document.body.appendChild(button);
+```
+
+## 自定义
+
+通过引入name修改元素名称
+
+```html
+<script type="module">
+    import { name } from "https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js"
+
+    name.prefix = "custom-";
+    name.suffix = "-element";
+</script>
+```
+
+这将使具有自带其他组件的组件失效,这些组件可以通过属性`set=0`来禁用
+
+默认样式由自定义样式提供,若要修改,大部分组件可以通过对自身的样式修改覆盖默认样式,或是通过设置同名的css变量覆盖默认样式
+
+就行这样
+
+```css
+nav-layout{
+  color: #000;
+  --nav-background: #fff;
+}
+```
+
+</Cata>

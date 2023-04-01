@@ -1,0 +1,87 @@
+import Cata from "@/lib/layout/cata"
+
+import Callout from "@/lib/layout/callout"
+
+
+<Cata>
+
+<Callout>The translation is not yet fully ready</Callout>
+
+
+# Introduce
+
+Godown is a set of Lit-based components, each of which is a standard web component, as is every Godown component
+
+## Installation
+
+```bash
+npm i godown
+```
+
+### Introduced in HTML via CDN
+
+Bringing the file into the `script` and using the `type="module"` attribute, this link will also import lit
+```html
+<script type="module" src="https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js"></script>
+```
+
+Example, showing a base-button
+  
+```html 
+<body>
+  <script type="module" src="https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js"></script>
+  <base-button>Click me</base-button>
+</body>
+```
+
+### Introduced via JS
+
+```js
+import "https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js"
+```
+
+Example, showing a base-button
+
+```js
+import { BaseButton } from "https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js";
+
+const button = new BaseButton();
+button.innerText = "BaseButton";
+document.body.appendChild(button);
+```
+
+```js
+import "https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js";
+
+const button = document.createElement("base-button");
+button.textContent = "BaseButton";
+document.body.appendChild(button);
+```
+
+## Customization
+
+Modify the element name by introducing name
+
+```html
+<script type="module">
+    import { name } from "https://cdn.jsdelivr.net/gh/STARTRACEX/godown-lit/index.js"
+
+    name.prefix = "custom-";
+    name.suffix = "-element";
+</script>
+```
+
+This will invalidate components that have their own other components, which can be disabled by the attribute `set=0`
+
+Default styles are provided by custom styles, and to modify them, most components can override the default styles by modifying their own styles, or by setting CSS variables of the same name
+
+That's it
+
+```css
+nav-layout{
+  color: #000;
+  --nav-background: #fff;
+}
+```
+
+</Cata>

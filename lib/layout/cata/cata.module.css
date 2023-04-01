@@ -1,0 +1,59 @@
+.summary {
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.summary svg {
+  width: 42px;
+  height: 42px;
+}
+
+.cata details {
+  width: 100%;
+  height: 100%;
+}
+
+.list {
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc(100% - 48px);
+}
+
+.list>* {
+  margin: 4px;
+  padding: 1px;
+}
+
+.list details-item {}
+
+.list details-item super-a {
+  display: block;
+  font-size: 90%;
+  padding: 4px;
+}
+
+.list super-a:hover {
+  width: 100%;
+  background-color: #222222;
+}
+
+.cata>main {
+  width: 100%;
+}
+.cata>nav-aside{
+  z-index: 999;
+}
+
+@media screen and (min-width: 768px) {
+  .cata>main {
+    width: 80%;
+    max-width: 980px;
+  }
+}

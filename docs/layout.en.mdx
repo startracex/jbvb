@@ -1,0 +1,40 @@
+# layout
+
+## Global layout
+
+### nav-layout
+
+nav-layout is a default navigation bar, which can contain the footer
+
+|propties|type|default|desc|
+|---|---|---|---|
+|title|string|""|Subtitle|
+|set|number|2|Number of options|
+|foo|boolean|false|Disable footer|
+
+If the title is `""` the subtitle will not be displayed, otherwise it will be a string of `|` and subtitle
+
+Set will round down to display the set options
+
+If foo is `true` the bottom(footer) will not be displayed
+
+### asidenav-layout
+
+asidenav-layout is mainly located on the side of the navigation
+
+|propties|type|default|desc|
+|---|---|---|---|
+|m|number|720|Change to mobile terminal adaptation|
+
+## Partial layout
+
+### divier-line
+
+divier-line can be used as horizontal and vertical dividing lines
+
+|propties|type|default|desc|
+|---|---|---|---|
+|pre|string|"auto"|Length of prefix|
+|suf|string|"auto"|Length of suffix|
+|v|boolean|false|Enable vertical|
+|b|string|"2.2px"|Width|

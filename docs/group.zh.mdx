@@ -1,0 +1,64 @@
+# 组
+
+## avatar-group
+
+avatar-group 用于展示多个avatar-auchor
+
+|属性|类型|默认值|描述|
+|---|---|---|---|
+|rank|boolean|false|启用排名|
+|max|number|0|最大显示数量|
+
+如果max不为0,当avatar-auchor的数量超过max时将会追加一个more并移除冗余元素
+`append(args,bool)` 添加一个avatar-auchor元素,将执行config.append(this,args),bool的值将会设置avatar-auchor空缺的的`call`属性为"left"或"right"
+`subtract()` 移除一个avatar-auchor元素
+
+## button-group
+
+button-group 会适应内部的按钮和其他内容
+
+|属性|类型|默认值|描述|
+|---|---|---|---|
+|h|boolean|false|禁用水平内部圆角|
+|v|boolean|false|禁用垂直内部圆角|
+
+使用name为`pre`和`suf`的slot元素来指定前后(上下)元素
+
+## details-group
+
+details-group 用于承放多个details或detail-item元素
+
+|属性|类型|默认值|描述|
+|---|---|---|---|
+|index|Number|0|默认打开|
+|only|boolean|false|限制打开数量为1|
+
+`reset()`重设初始状态
+
+## section-group
+
+section-group 包含一个可打开的显示组
+
+|属性|类型|默认值|描述|
+|---|---|---|---|
+|index|string|第一个子元素|起始索引|
+|split|boolean|false|启用分割|
+|v|boolean|false|启用垂直|
+|reverse|boolean|false|启用反向|
+
+第一次渲染时将会显示具有slot的值与index的值相同的元素
+
+如果split为 `true` 将会在第一次渲染时不打开任何内容,这与重复选择子项的行为一致
+
+## content-group
+
+content-group 包含一个grid展示的可排序内容组
+
+|属性|类型|默认值|desc|
+|---|---|---|---|
+|sort|string|""|排序依据|
+|col|string|"" (或"1fr 1fr")|"grid-template-columns"的值|
+
+如果sort不为 `""` 将会根据sort的值对子元素进行正序排序,需要子元素具有与sort的值相同的属性,并可被转化为数字
+
+coll的值将会被赋值给直接容器的 `grid-template-columns` ,其默认值与"1fr 1fr"效果(均分两列)相同

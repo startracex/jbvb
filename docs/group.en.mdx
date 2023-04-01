@@ -1,0 +1,64 @@
+# Groups
+
+## avatar-group
+
+avatar-group used to display multiple avatar-auchor
+
+|propties|type|default|desc|
+|---|---|---|---|
+|rank|boolean|false|Enable rank|
+|max|number|0|Maximum display quantity|
+
+If max is not 0, when the number of avatar-anchors exceeds max, a more will be added and redundant elements will be removed
+`append(args,bool)` Add an avatar-anchor element, and config.append (this, args) will be executed. The value of bool will set the missing `call` attribute of avatar-anchor to "left" or "right"
+`subtract()` Remove an avatar-author element
+
+## button-group
+
+buttton-group will adapt internal buttons and other contents
+
+|propties|type|default|desc|
+|---|---|---|---|
+|h|boolean|false|Disable horizontal internal fillets|
+|v|boolean|false|Disable vertical internal fillets|
+
+Use slot elements with names of `pre` and `suf` to specify the front and back (up and down) elements
+
+## details-group
+
+Details-group is used to support multiple details or detail-item elements
+
+|propties|type|default|desc|
+|---|---|---|---|
+|index|Number|0|Open by default|
+|only|boolean|false|Limit the number of openings to 1|
+
+`reset()` reset the initial state
+
+## section-group
+
+section-group contains an openable display content box
+
+|propties|type|default|desc|
+|---|---|---|---|
+|index|string|first children|Index of content|
+|split|boolean|false|Enable split|
+|v|boolean|false|Enable vertical|
+|reverse|boolean|false|Enable reverse|
+
+Elements with the same value of slot and index will be displayed in the first rendering
+
+Nothing will be opened at the first rendering if split is' `true` . which is consistent with the behavior of repeatedly selecting sub-items
+
+## content-group
+
+content-group contains a content sorted by grid
+
+|propties|type|default|desc|
+|---|---|---|---|
+|sort|string|""|Basis  for sorting|
+|col|string|"" (or "1fr 1fr")|value of "grid-template-columns"|
+
+If sort is not `""`, the child elements will be sorted in positive order according to the value of sort. The child elements need to have the same attributes as the value of sort and can be converted into numbers
+
+The value of coll will be assigned to the `grid template columns` of the direct container, and its default value is the same as the "1fr 1fr" effect (divided equally into two columns)

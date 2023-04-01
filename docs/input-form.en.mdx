@@ -1,0 +1,80 @@
+# Input/Forms
+
+## Input
+
+`reset()` Reset the input value to the default value
+
+`namevalue()` Get the name and value as array[name,value] of the input
+
+### label-input
+
+label-input.js contains an adaptive input
+
+|propties|type|default|desc|
+|---|---|---|---|
+|label|string|""|Display the value of label|
+|type|string|"text"|Type of input|
+|name|string|laebl or type|Name of input
+|id|string|label|Id of input|
+|pla|string|""|Placeholder of input|
+|def|string|""|Default value of input|
+|value|string|def|Value of input|
+
+### base-input
+
+base-input contains a basic input box
+
+The attribute contains all the attributes of label-input and the available attributes of input
+
+### exp-input
+
+exp-input contains the style extension of a common input box
+
+The attribute contains all attributes of label-input and the following
+
+|propties|type|default|desc|
+|base|string|""|Expand style type|
+|offset|string|"0"|Legend horizontal offset|
+
+### search-input
+
+search-input contains a multi-function search box to obtain content through the page or server or network
+
+|propties|type|default|desc|
+|---|---|---|---|
+|query|string|""|Index of local query|
+|target|string|""|Result location of local query|
+|remote|boolean|false|Change sending url to remote|
+|infer|boolean|false|Enable inference list from remote|
+|action|string|"./"|Form action|
+|method|string|"get"|Form method|
+|name|string|"q"|Search request name|
+
+If remote is `false`, it will search from the document Search the input value from all `query` and place it in `target`
+
+If remote is `true`, set the remote address If infer is `true` , an inference list will be displayed, which can be obtained remotely
+
+## Forms
+
+### sign-form
+
+sign-form contains an login/registration form
+
+|propties|type|default|desc|
+|---|---|---|---|
+|method|string|"post"|Form method|
+|reset|boolean|false|Enable reset function|
+|submit|function|()=>{}|Submit|
+
+If reset is `true` a reset button will be added
+
+### search-w
+
+Search-w contains a collection of major search engines
+
+|propties|type|default|desc|
+|---|---|---|---|
+|origin|string|I don't know|Name of engine|
+|action|string|I don't know|Address of engine|
+|pla|string|I don't know|Placeholder of input|
+|name|string|I don't know|Name of input|

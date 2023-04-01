@@ -1,0 +1,38 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Export
+        run: npm run export
+
+      - name: deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.TEST }}
+          BRANCH: site
+          FOLDER: out
