@@ -92,34 +92,6 @@ public class ArgsParser {
         return Value;
     }
 
-    /**
-     * With (T T T null) is the same as with (T T T).
-     *
-     * @return with(origin, current, def, null);
-     */
-    public static <T> T with(T origin, T current, T def) {
-        return with(origin, current, def, null);
-    }
-
-    /**
-     * When the current is not only, modify the origin, otherwise set the origin to def.
-     *
-     * @param origin  The origin value.
-     * @param current The current value.
-     * @param def     The default value of origin.
-     * @param only    Compare with only to execute changes.
-     * @return Asserted value.
-     */
-    public static <T> T with(T origin, T current, T def, T only) {
-        if (origin == only) {
-            origin = def;
-        }
-        if (current != only) {
-            origin = current;
-        }
-        return origin;
-    }
-
     public String[] Other() {
         return this.args;
     }
