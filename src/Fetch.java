@@ -125,9 +125,7 @@ public class Fetch<T> {
         }
 
         if (res.headers != null) {
-            res.headers.forEach((k, v) -> {
-                connection.setRequestProperty(k.toString(), v.toString());
-            });
+            res.headers.forEach(connection::setRequestProperty);
         }
         if (res.redirect != null) {
             switch (res.redirect) {
