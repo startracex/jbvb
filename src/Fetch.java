@@ -112,15 +112,9 @@ public class Fetch<T> {
         connection.setUseCaches(res.cache);
         if (res.mode != null) {
             switch (res.mode) {
-                case "cors":
-                    connection.setRequestProperty("Access-Control-Allow-Origin", "*");
-                    break;
-                case "no-cors":
-                    connection.setRequestProperty("Access-Control-Allow-Origin", "null");
-                    break;
-                case "same-origin":
-                    connection.setRequestProperty("Access-Control-Allow-Origin", "same-origin");
-                    break;
+                case "cors" -> connection.setRequestProperty("Access-Control-Allow-Origin", "*");
+                case "no-cors" -> connection.setRequestProperty("Access-Control-Allow-Origin", "null");
+                case "same-origin" -> connection.setRequestProperty("Access-Control-Allow-Origin", "same-origin");
             }
         }
 
@@ -129,12 +123,8 @@ public class Fetch<T> {
         }
         if (res.redirect != null) {
             switch (res.redirect) {
-                case "follow":
-                    connection.setInstanceFollowRedirects(true);
-                    break;
-                case "error", "manual":
-                    connection.setInstanceFollowRedirects(false);
-                    break;
+                case "follow" -> connection.setInstanceFollowRedirects(true);
+                case "error", "manual" -> connection.setInstanceFollowRedirects(false);
             }
         }
 
