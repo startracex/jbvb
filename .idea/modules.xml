@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/fetchAPI.iml" filepath="$PROJECT_DIR$/fetchAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jbvb.iml" filepath="$PROJECT_DIR$/jbvb.iml" />
     </modules>
   </component>
 </project>
