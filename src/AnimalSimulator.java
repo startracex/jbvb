@@ -1,4 +1,4 @@
-public class AS {
+public class AnimalSimulator {
     public static void main(String[] args) {
         Simulator s = new Simulator();
         s.platSound(new Dog());

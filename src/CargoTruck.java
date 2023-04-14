@@ -1,4 +1,4 @@
-public class V {
+public class CargoTruck {
     public static void main(String[] args) {
         Phone p = new Phone(193, 485);
         Truck t = new Truck("z025", "benz", "小韩", 76.56, "HYX600235",p);
